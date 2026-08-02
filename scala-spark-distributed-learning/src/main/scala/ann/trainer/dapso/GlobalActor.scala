@@ -69,6 +69,8 @@ object GlobalActor {
       }
 
       Behaviors.receiveMessage {
+        case ContinueSendingMessages =>
+          Behaviors.same
         case StartSendingMessages =>
           println("Start Global Actor task")
 

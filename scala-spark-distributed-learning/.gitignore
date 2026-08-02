@@ -1,0 +1,15 @@
+# IntelliJ
+.idea/
+*.iml
+
+# BSP
+.bsp/
+
+# Build
+target/
+
+# Results
+results/
+
+# Local datasets
+*.csv

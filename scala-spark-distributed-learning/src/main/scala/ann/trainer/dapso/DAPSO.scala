@@ -62,6 +62,10 @@ class DAPSO(
    * Sets the data for the particle swarm optimization and initializes weights
    */
   override def initWeights(x: List[List[Double]], y: List[Double]): Unit = {
+    // Reset optimizer state
+    particlesPos = Array.empty[Array[Double]]
+    bestFitness = Double.PositiveInfinity
+    bestPos = Array.empty[Double]
     // Set data
     this.x = x.map(v => v.toArray).toArray
     this.y = y.toArray

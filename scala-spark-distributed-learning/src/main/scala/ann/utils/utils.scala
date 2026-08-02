@@ -4,7 +4,7 @@ import java.io.{FileWriter, PrintWriter}
 import scala.collection.mutable.ListBuffer
 import scala.math.signum
 import scala.util.Random
-
+import scala.util.Try
 package object utils {
   /**
    * Reads a CSV file with data
@@ -13,7 +13,7 @@ package object utils {
    * @param nRows    Number of rows to keep from the file
    * @return A list with the rows of data
    */
-  def readCSV(fileName: String, nRows: Int): List[List[Double]] = {
+ /* def readCSV(fileName: String, nRows: Int): List[List[Double]] = {
     import scala.io.Source
 
     // Get data from file
@@ -31,7 +31,35 @@ package object utils {
     data.close()
     rows
   }
+*/
 
+  def readCSV(path: String, nRows: Int): List[List[Double]] = {
+    import scala.io.Source
+    val source = Source.fromFile(path)
+
+    try {
+      val lines = source.getLines().filter(_.trim.nonEmpty)
+
+      val parsedRows = lines.map { line =>
+        val fields = line
+          .split("[;,]")
+          .map(_.trim)
+          .filter(_.nonEmpty)
+
+        fields.map(value => Try(value.toDouble))
+      }
+
+      parsedRows
+        // Omite cabeceras u otras filas no completamente numéricas.
+        .filter(row => row.nonEmpty && row.forall(_.isSuccess))
+        .take(nRows)
+        .map(row => row.map(_.get).toList)
+        .toList
+
+    } finally {
+      source.close()
+    }
+  }
   /**
    * Write the weights into a CSV file
    * @param filename Name for the CSV file
