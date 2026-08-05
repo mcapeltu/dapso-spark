@@ -1,39 +1,40 @@
-# Distribución automática en múltiples máquinas del proceso de aprendizaje para redes neuronales
+# Automatic distribution of the training process for neural networks across multiple machines
+# (Distribución automática en múltiples máquinas del proceso de aprendizaje para redes neuronales)
 
-Repositorio de mi Trabajo de Fin de Grado en la Universidad de Granada.
+Repository of Manuel Gachs’s final-year project at the University of Granada.
 
-## Contenidos
+## Contents
 
- - **[Scala Spark Distributed Learning](scala-spark-distributed-learning)**: Contiene el código del proyecto. El archivo `main.scala` contiene el código necesario para ejecutar las pruebas del capítulo 8 de la memoria.
+ - **[Scala Spark Distributed Learning](scala-spark-distributed-learning)**: It contains the project code. The `main.scala` file contains the code required to run the tests in Chapter 8 of the thesis book.
 
- - **[Memoria](memoria)**: Contiene el proyecto LaTeX con la memoria del trabajo.
+ - **[Memoria](memoria)**:Contains the LaTeX file with the text of the undergraduate dissertation.
 
 ## Resumen
 
-En las últimas décadas, los avances en el campo del aprendizaje automático o ML
-(machine learning en inglés) han adopción masiva de sus métodos y técnicas en el
-sector privado. Estas técnicas necesitan muchas veces realizar cálculos repetitivos
-sobre grandes volúmenes de datos para obtener resultados útiles. La utilización de
-estas técnicas supone la ejecución de operaciones que necesitan ser completadas en
-un tiempo “razonable”. Conforme los modelos se vuelven más complejos, el tiempo
-necesario para realizar los cálculos aumenta considerablemente. Es por ello
-que la ejecución paralela y distribuida de los mencionados cálculos se ha convertido
-en un proceso clave para que el proceso de entrenamiento sea factible y se pueda
-llevar a cabo eficientemente.
+In recent decades, advances in the field of machine learning (ML)
+have led to the widespread adoption of its methods and techniques in the
+private sector. These techniques often require repetitive calculations
+to be carried out on large volumes of data in order to obtain useful results. The use of
+these techniques involves performing operations that need to be completed within
+a ‘reasonable’ time. As models become more complex, the time
+required to perform the calculations increases considerably. This is why
+the parallel and distributed execution of these calculations has become
+a key factor in ensuring that the training process is feasible and can be
+carried out efficiently.
 
-El objetivo de este proyecto es ofrecer una herramienta que permita automatizar
-la distribución y paralelización, en unidades de procesamiento gráficas, el proceso
-de aprendizaje de redes neuronales, consiguiendo de esta manera suavizar la curva
-de aprendizaje de técnicas de paralelización para personas sin los conocimientos
-técnicos necesarios para obtener rendimiento de la programación paralela.
+The aim of this project is to provide a tool that enables the automation
+of the distribution and parallelisation, across graphics processing units, of the
+neural network learning process, thereby smoothing the learning curve
+for parallelisation techniques for those without the technical knowledge
+required to achieve high performance in parallel programming.
 
-Los objetivos incialmente propuestos del trabajo son los siguientes: En primer lugar,
-la transformación automática de secciones de código secuencial de entrenamiento de
-redes neuronales mediante llamadas a librerías específicas también implementadas
-en el trabajo que hagan posible la paralelización con GPUs. En segundo lugar, la
-construcción de un intérprete a código de funciones seleccionadas que incluyen
-código paralelizado para su ejecución en GPUs. En tercer lugar, aplicar conocimientos
-de la teoría matemática fundamental de compiladores y autómatas para automatizar
-el proceso de paralelización anterior. Finalmente, conseguir suavizar la curva de
-aprendizaje de técnicas de paralelización para personas sin un conocimiento a bajo
-nivel del hardware de los procesadores GPU.
+The initial objectives of this work are as follows: Firstly,
+the automatic transformation of sections of sequential code for training
+neural networks through calls to specific libraries—also implemented
+in this work—that enable parallelisation using GPUs. Secondly, the
+construction of an interpreter for selected functions that include
+parallelised code for execution on GPUs. Thirdly, to apply knowledge
+of the fundamental mathematical theory of compilers and automata to automate
+the aforementioned parallelisation process. Finally, to help flatten the learning curve
+for parallelisation techniques for people without low-level
+knowledge of GPU hardware.
