@@ -7,8 +7,8 @@ import java.io.{FileWriter, PrintWriter}
 object main {
   def main(args: Array[String]): Unit = {
     // testIterationsClas()
-   testReg()
-    //testData()
+   //testReg()
+    testData()
   }
 
   private def testIterationsClas(): Unit = {
